@@ -94,6 +94,10 @@ Set up (the latest version of) [HAProxy](http://www.haproxy.org/) in Ubuntu syst
 * `haproxy_listen.{n}.capture.type`: [required]: What to capture (`cookie`, `request header`, `response header`)
 * `haproxy_listen.{n}.capture.name`: [required]: Name of the header or cookie to capture
 * `haproxy_listen.{n}.capture.length`: [required]: Maximum number of characters to capture and report in the logs
+* `haproxy_listen.{n}.tcp_request`: [optional]: Access control for Layer 4 requests
+* `haproxy_listen.{n}.tcp_request.{n}.action`: [required]: The rules action (e.g. `inspect-delay`, `content`)
+* `haproxy_listen.{n}.tcp_request.{n}.param`: [optional]: The complete line to be added (e.g. `5s`)
+* `haproxy_listen.{n}.tcp_request.{n}.cond`: [optional]: A matching condition built from ACLs (e.g. `accept if HTTP`)
 * `haproxy_listen.{n}.http_request`: [optional]: Access control for Layer 7 requests
 * `haproxy_listen.{n}.http_request.{n}.action`: [required]: The rules action (e.g. `add-header`)
 * `haproxy_listen.{n}.http_request.{n}.param`: [optional]: The complete line to be added (e.g. `X-Forwarded-Proto https`)
@@ -151,6 +155,10 @@ Set up (the latest version of) [HAProxy](http://www.haproxy.org/) in Ubuntu syst
 * `haproxy_frontend.{n}.capture.type`: [required]: What to capture (`cookie`, `request header`, `response header`)
 * `haproxy_frontend.{n}.capture.name`: [required]: Name of the header or cookie to capture
 * `haproxy_frontend.{n}.capture.length`: [required]: Maximum number of characters to capture and report in the logs
+* `haproxy_frontend.{n}.tcp_request`: [optional]: Access control for Layer 4 requests
+* `haproxy_frontend.{n}.tcp_request.{n}.action`: [required]: The rules action (e.g. `inspect-delay`, `content`)
+* `haproxy_frontend.{n}.tcp_request.{n}.param`: [optional]: The complete line to be added (e.g. `5s`)
+* `haproxy_frontend.{n}.tcp_request.{n}.cond`: [optional]: A matching condition built from ACLs (e.g. `accept if HTTP`)
 * `haproxy_frontend.{n}.http_request`: [optional]: Access control for Layer 7 requests
 * `haproxy_frontend.{n}.http_request.{n}.action`: [required]: The rules action (e.g. `add-header`)
 * `haproxy_frontend.{n}.http_request.{n}.param`: [optional]: The complete line to be added (e.g. `X-Forwarded-Proto https`)
